@@ -1,4 +1,5 @@
 import React from "react";
+import Day from "./Day";
 
 class Weather extends React.Component {
   render() {
@@ -11,10 +12,17 @@ class Weather extends React.Component {
     } = this.props.weather;
     return (
       <div>
-        <h2>Weather</h2>
+        <h2>Weather {this.props.displayLocation}</h2>
         <ul className="weather">
-          {dates.map((date) => (
-            <Date />
+          {dates.map((date, i) => (
+            <Day
+              max={max.at(i)}
+              min={min.at(i)}
+              date={date}
+              code={codes.at(i)}
+              key={date}
+              isToday={i === 0}
+            />
           ))}
         </ul>
       </div>
