@@ -1,14 +1,16 @@
 import React from "react";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-
   render() {
-    return <div>{this.state.count}</div>;
+    return (
+      <div className="app">
+        <h1>Classy Weather</h1>
+        <div>
+          <input type="text" placeholder="Search for weather" />
+        </div>
+      </div>
+    );
   }
 }
-}
 
-export default Counter;
+export default App;
