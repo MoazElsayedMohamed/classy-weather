@@ -1,4 +1,5 @@
 import React from "react";
+import Weather from "./Weather";
 
 function convertToFlag(countryCode) {
   const codePoints = countryCode
@@ -65,7 +66,14 @@ class App extends React.Component {
         </div>
         <button onClick={this.fetchWeather}>Get Weather</button>
 
-        {(this, this.state.isLoading && <p className="loader">Loading</p>)}
+        {this.state.isLoading && <p className="loader">Loading</p>}
+
+        {this.state.weather.weathercode && (
+          <Weather
+            weather={this.state.weather}
+            displaylocation={this.state.displaylocation}
+          />
+        )}
       </div>
     );
   }
