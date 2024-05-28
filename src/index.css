@@ -49,3 +49,14 @@ input {
   border: none;
   width: 32rem;
 }
+
+.loader {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.weather {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
